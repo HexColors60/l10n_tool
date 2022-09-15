@@ -1,6 +1,7 @@
 # l10n_tool
 Scripts to help make machine translate data of local files.
 
+<pre>
 A lot of small files to translate.
 Translated data must in extract same line number.
 Some source data is empty in a line.
@@ -14,3 +15,4 @@ a02.txt 1 ---tiger
 a02.txt 2 ---hawk
 a03.txt 2 ---lion
 a05.txt 8 ---chicken
+</pre>
