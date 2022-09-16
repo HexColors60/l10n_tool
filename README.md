@@ -16,3 +16,10 @@ a02.txt 2 ---hawk
 a03.txt 2 ---lion
 a05.txt 8 ---chicken
 </pre>
+<pre>
+8th 01mkold.8th
+8th 02form.8th > all.out
+rem Translate all.out data file to data.text with translate tool.
+8th 03mknew.8th data.text
+8th 04copy.8th
+</pre>
