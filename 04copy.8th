@@ -1,0 +1,3 @@
+: go nip dup ".new" "" s:replace! f:copy drop ;
+"*.txt.new" f:glob ' go a:each
+bye
