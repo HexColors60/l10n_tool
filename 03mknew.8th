@@ -1,0 +1,48 @@
+var index
+var data
+var fn
+var num
+
+var all
+var all2
+: work
+  all2 @ swap a:push drop
+;
+: go
+  dup . cr
+          "---" s:search null? if 2drop else 
+            drop "---" s:/ 0 a:@ index ! 1 a:@ data ! drop
+            index @ /(\w+\.txt)\s+(\d+)/ r:+/ 0 a:@ fn ! 1 a:@ num ! drop
+            fn @ . cr num @ . cr data @ . cr
+            fn @ null? fn @ f:exists? not or if drop else drop
+            all @ fn @ .s m:exists? not if
+              a:new all2 !
+              fn @ f:open-ro ' work f:eachline f:close
+              fn @ all2 @ m:!
+            then
+            fn @ m:@ num @ >n n:1- dup >r "old: " . a:@ .  r> cr data @ dup "new: " . . cr a:! drop drop
+            then
+          then
+;
+
+var fn2
+var data2
+var fd2
+
+: write2
+  nip "\n" s:+ fd2 @ swap f:write drop
+;
+: write
+  data2 ! fn2 !
+  fn2 @ ".new" s:+ f:create fd2 !
+  data2 @ ' write2 a:each  
+  fd2 @ f:close
+;
+
+m:new all !
+0 args f:open ' go f:eachline
+all @ ' write m:each
+
+bye
+\ 8th 03mknew.8th data.text
+\ Debug messages is not cleanup.
