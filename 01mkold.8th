@@ -1,0 +1,3 @@
+: go nip dup ".old" s:+ dup f:exists? not if f:copy else swap . " exists." . cr then drop ;
+"*.txt" f:glob ' go a:each
+bye
