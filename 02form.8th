@@ -1,0 +1,22 @@
+var fn
+var ln
+var data
+: run
+  ln @ n:1+ ln !
+  data !
+  data @ s:len 1 n:> if
+    fn @ . " " . ln @ . " ---" . . "\n" . 
+  else
+    drop
+  then
+;
+: go
+  nip
+  fn !
+  0 ln !
+  fn @ f:open-ro ' run f:eachline f:close
+;
+
+"*.txt" f:glob ' go a:each
+bye
+\ 8th 02form.8th > all.out
