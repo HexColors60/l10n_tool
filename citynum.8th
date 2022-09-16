@@ -1,0 +1,11 @@
+0 var, n 
+: x n @ n:1+ dup n ! ;
+: cr. "\n" . ;
+: go "－" s:search null? if drop x . " " . . cr. else x 2drop . cr. then ; 
+: main "idnem.txt" f:open ' go f:eachline f:close ;
+main
+
+bye
+\ RJ185196_trial\Meine Reise Demo\mdata\world1\mtext\a
+\ 8th citynum.8th > idnem.txt.new
+\ copy idnem.txt.new idnem.txt
