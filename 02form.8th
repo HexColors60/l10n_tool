@@ -5,7 +5,7 @@ var data
   ln @ n:1+ ln !
   data !
   data @ s:len 1 n:> if
-    fn @ . " " . ln @ . " ---" . . "\n" . 
+    fn @ f:fname . " " . ln @ . " ---" . . "\n" . 
   else
     drop
   then
